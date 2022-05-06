@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Tmdb from "./Tmdb";
 import MovieRow from "./MovieRow";
+import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  *{
+    margin: 1.5vw;
+    padding:0;
+    font-family:'IBM Plex Mono', monospace;
+    background-color:black;
+    color: white;
+  }`;
 
 export default () => {
   const [movieList, setMovieList] = useState([]);
@@ -16,6 +27,7 @@ export default () => {
   return (
     <>
       <div className="page">
+        <GlobalStyle />
         <section className="listas">
           {movieList.map((movie) => (
             <MovieRow
