@@ -1,3 +1,10 @@
 .Destaques {
-  height: 100vh;
+  display: inline-block;
+  height: 60vh;
+  margin-top: 10%;
+}
+.red {
+  display: flex;
+  width: 40vw;
+  height: 35vh;
 }
