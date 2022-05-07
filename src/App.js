@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Tmdb from "./Tmdb";
 import MovieRow from "./MovieRow";
-import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import DestaqueMovie from "./DestaqueMovie";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default () => {
   const [movieList, setMovieList] = useState([]);
+  const [DestaqueData] = useState(null);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -28,6 +29,7 @@ export default () => {
     <>
       <div className="page">
         <GlobalStyle />
+        <DestaqueMovie item={DestaqueData} />
         <section className="listas">
           {movieList.map((movie) => (
             <MovieRow
